@@ -5,8 +5,8 @@ use strict;
 sub xfrm_edit {
     my ($cb, $app, $tmpl) = @_;
     my $slug1 = <<END_TMPL;
-<link rel="stylesheet" href="<mt:StaticWebPath>plugins/FullScreen/fullscreen.css" type="text/css" />
-<script src="<mt:StaticWebPath>plugins/FullScreen/fullscreen.js"></script>
+<link rel="stylesheet" href="<mt:Var name="static_uri">plugins/FullScreen/fullscreen.css" type="text/css" />
+<script src="<mt:Var name="static_uri">plugins/FullScreen/fullscreen.js"></script>
 END_TMPL
     $$tmpl =~ s{(<mt:setvarblock name="html_head" append="1">)}{$1$slug1}msg;
 }
@@ -22,8 +22,8 @@ END_TMPL
 sub xfrm_tmpl {
     my ($cb, $app, $tmpl) = @_;
     my $slug1 = <<END_TMPL;
-<link rel="stylesheet" href="<mt:StaticWebPath>plugins/FullScreen/fullscreen.css" type="text/css" />
-<script src="<mt:StaticWebPath>plugins/FullScreen/fullscreen.js"></script>
+<link rel="stylesheet" href="<mt:Var name="static_uri">plugins/FullScreen/fullscreen.css" type="text/css" />
+<script src="<mt:Var name="static_uri">plugins/FullScreen/fullscreen.js"></script>
 END_TMPL
     $$tmpl =~ s{(<mt:setvarblock name="html_head" append="1">)}{$1$slug1}msg;
     my $slug2 = <<END_TMPL;
